@@ -3,7 +3,7 @@
 <head>
     <title>QR Code Generator</title>
 
-    <<style>
+    <style>
         body {
             background: linear-gradient(to right, #141E30, #243B55);
             font-family: Arial, sans-serif;
@@ -61,10 +61,21 @@
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 14px;
-            color: gray;
+            color: #555;
         }
+
+        .footer a {
+            color: #243B55;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 
@@ -87,8 +98,15 @@
         {% endif %}
 
         <div class="footer">
-            Built with Python & Flask
-        </div>
+             <p>Built with ❤️ using Python & Flask</p>
+             <p>
+                 Developer:
+                <a href="https://github.com/PanduReddyMannuru" target="_blank">
+                Pandu Reddy
+             </a>
+        </p>
+</div>
+
     </div>
 
 </body>
