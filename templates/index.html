@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+
+    <<style>
+        body {
+            background: linear-gradient(to right, #141E30, #243B55);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 80px;
+            background: white;
+            color: black;
+            width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #243B55;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #141E30;
+        }
+
+        img {
+            margin-top: 20px;
+            width: 200px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #243B55;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>QR Code Generator</h2>
+        <p>Enter any website, text, or link and instantly get a QR code.</p>
+
+        <form method="POST">
+            <input type="text" name="data" placeholder="Enter text or URL" required>
+            <br>
+            <button type="submit">Generate QR</button>
+        </form>
+
+        {% if qr_img %}
+            <img src="{{ qr_img }}">
+            <br>
+            <a href="{{ qr_img }}" download>Download QR Code</a>
+        {% endif %}
+
+        <div class="footer">
+            Built with Python & Flask
+        </div>
+    </div>
+
+</body>
+</html>
